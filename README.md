@@ -41,6 +41,12 @@ Currently only the default work mode is supported - you need to download assets 
 
 ------------
 
+### Usage
+
+For information on exporting animations to GLTF/GLB format, see [GLTF_EXPORT_GUIDE.md](GLTF_EXPORT_GUIDE.md).
+
+------------
+
 - For Developers/Contributors
 1. [Unity Hub](https://unity3d.com/get-unity/download) with [Unity Engine Version 2022.3.62f1](https://unity.com/releases/editor/archive) is recommended. It should be possible to run it on newer 2022.3.X versions.
 1. Clone or download and extract this repository.
@@ -64,6 +70,7 @@ Currently only the default work mode is supported - you need to download assets 
 | Cloth/Hair physics | ✓  |
 | Playing Live Audio with Lyrics | ✓  |
 | Exporting animations to MMD | ✓  |
+| Exporting animations to GLTF/GLB | ✓  |
 | Recording animations (.gif), screenshots | ✓  |
 | Viewing Props, Scenery, Live scenes | /  |
 | Exporting models | /  |

@@ -1080,6 +1080,42 @@ public class UmaViewerUI : MonoBehaviour
         }
     }
 
+    public void ExportGLTF()
+    {
+        var container = Builder.CurrentUMAContainer;
+
+        if (!container || container.IsMini)
+        {
+            ShowMessage("Need Normal UMA to export GLTF", UIMessageType.Error);
+            return;
+        }
+
+        var rootbone = container.transform.Find("Position");
+        if (rootbone == null)
+        {
+            rootbone = container.transform;
+        }
+
+        // Get or create the GLTF exporter component
+        var exporter = rootbone.gameObject.GetComponent<GLTFAnimationExporter>();
+        if (exporter == null)
+        {
+            exporter = rootbone.gameObject.AddComponent<GLTFAnimationExporter>();
+            exporter.Initialize();
+        }
+
+        // Check if already exporting
+        if (exporter.IsExporting)
+        {
+            ShowMessage("GLTF export already in progress", UIMessageType.Warning);
+            return;
+        }
+
+        // Export the animation
+        ShowMessage("Exporting to GLTF/GLB...", UIMessageType.Default);
+        exporter.QuickExport(container.name);
+    }
+
     public void UpdateLiveMode(int val)
     {
         LiveMode = val;

@@ -13,6 +13,7 @@ public class UISettingsAnimation : MonoBehaviour
     public TextMeshProUGUI SpeedText;
     public Slider SpeedSlider;
     public Button VMDButton;
+    public Button GLTFButton;
 
     internal void UpdateAnimationInfo(UmaContainerCharacter umaContainer)
     {
